@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HUMAN DISEASE PREDICTION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+
+  <body>
+    <script src="{{ url_for('static', filename='index.js') }}"></script> <!-- ✅ Updated JS path -->
+    <header>
+      <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="logo">
+            <br />MEDICO
+          </div>
+
+          <!-- ✅ Navigation Menu -->
+          <ul>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="prediction.html">Prediction</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>HUMAN DISEASE PREDICTION</h1>
+      <p>"Predict Prevent Protect Thrive"</p>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p style="font-size: 20px">&copy; MEDICO 2025. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

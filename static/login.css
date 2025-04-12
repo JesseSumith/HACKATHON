@@ -1,0 +1,113 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: url(image.png);
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+  }
+  
+  h1{
+  font-size: 40px;
+  color: #5d94ec;
+  }
+  .google-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #87b1f5;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    gap: 10px;
+  }
+  .google-btn img {
+    width: 10px;
+    height: 10px;
+  }
+  .google-btn:hover {
+    background-color: #6692d8;
+  }
+  
+  .login-box {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: larger;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 50px auto; /* Centers the box */
+  }
+  
+  
+  
+  .login-box input {
+    width: 80%;
+    padding: 0px;
+    font-size: 30px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-box button {
+    width: 80%;
+    padding: 0px;
+    background-color: #6692d8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 40px;
+  }
+  
+  .login-box button:hover {
+    background-color: #4f7cb5;
+  }
+  
+  div img {
+      width: 50px;
+      height: 60px;
+      border-radius: 50cm;
+      
+    }
+    .navbar{
+      padding-left: 25px;
+      padding-right: 25px;
+      font-family: cursive;
+       
+       color: rgb(3, 17, 43);
+     
+     
+      border-radius: 25px;
+  }
+    .navdiv
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo a{
+    font-size: 75px;
+    font-weight: 600;
+     
+  }
+  li{
+    list-style: none;
+    display:inline-block;
+   margin-right: 25px;
+  }
+  main {
+    flex: 1; /* This makes the main content expand and push the footer down */
+    text-align: center;
+    padding: 20px;
+  }
+  .footer-content {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2px;
+  }

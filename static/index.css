@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../static/image.png");
+    background-attachment: fixed; 
+  }
+  
+  h2 {
+    text-align:left;
+    font-family: 'Times New Roman', Times, serif; 
+    color: rgb(0, 0, 0);
+    image-resolution:inherit;
+   
+  }
+  p{
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif; 
+  text-align:center;
+  max-width: 100000px;
+  }
+  body{
+    color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif; 
+  text-align:center;
+  max-width: 100000px;
+  }
+  
+  section {
+    color: rgb(19, 5, 103);
+    max-width: 200px;
+    background-position: center;
+    font-family:'Times New Roman', Times, serif;
+    text-align:center;
+    size: 100cm;
+    border-radius: 25px;
+    text-decoration: none;
+    background-color: rgb(19, 1, 1);
+  
+  }
+  
+  
+  div img {
+    width: 50px;
+    height: 60px;
+    border-radius: 50cm;
+    
+  }
+  .navbar{
+       padding-left: 25px;
+       padding-right: 25px;
+       font-family: cursive;
+        
+        color: rgb(3, 17, 43);
+       border-radius: 10px;
+  }
+  
+  .navdiv
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo a{
+    font-size: 75px;
+    font-weight: 60;
+     
+  }
+  li{
+    list-style: none;
+    display:inline-block;
+   margin-right: 10px;
+  }
+  
+  .footer-content {
+    color: white;
+    text-align: center;
+    font-size: 2px;
+  }
+  main {
+    flex: 1; 
+    text-align: center;
+    padding: 20px;
+  }
+  html,
+        body {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+        }
+  

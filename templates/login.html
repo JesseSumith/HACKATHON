@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HUMAN DISEASE PREDICTION</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="logo" />
+            Predict Prevent Protect Thrive<br>MEDICO
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <main>
+        <h1 style="text-align: center;">LOGIN HERE</h1>
+        <div class="login-box">
+          <!-- ✅ Login form begins -->
+          <form method="POST" action="/login">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit" style="font-size: 30px;">Login</button>
+          </form>
+          <!-- ✅ Login form ends -->
+
+          <p>or</p>
+          <a href="https://accounts.google.com/o/oauth2/auth" class="google-btn">
+            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" />
+            Continue with Google
+          </a>
+        </div>
+      </main>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <p style="font-size: 20px"><br><br>&copy; MEDICO 2025. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
