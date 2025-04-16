@@ -19,8 +19,8 @@
           <ul>
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="catalogue.html">Catalogue</a></li>
-            <li><a href="prediction.html">Prediction</a></li>
+            <li><a href="{{ url_for('FAQ') }}">FAQ's</a></li>
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
           </ul>
         </div>
       </nav>
@@ -36,7 +36,10 @@
         <p style="font-size: 20px">&copy; MEDICO 2025. All Rights Reserved.</p>
       </div>
       <div class="button">
-          <a href="chatbot.html">chatbot</a>
+        <li>
+          <a href="{{ url_for('chatbot') }}" >chatbot</a>
+        </li>
+        
       </div>
     </footer>
   </body>

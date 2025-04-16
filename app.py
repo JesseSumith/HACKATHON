@@ -31,25 +31,25 @@ def register():
         password = request.form.get('userPass')
         retype_pass = request.form.get('retypePass')
 
-        # Password match validation
+        print("Form Data:", fname, lname, username, email)
+
         if password != retype_pass:
             flash('Passwords do not match!')
+            print("Password mismatch")
             return render_template('register.html')
 
-        # Email uniqueness check
         if users_collection.find_one({"email": email}):
             flash('User already registered with this email.')
+            print("Duplicate email")
             return render_template('register.html')
 
-        # Username uniqueness check
         if users_collection.find_one({"username": username}):
             flash('Username already taken.')
+            print("Duplicate username")
             return render_template('register.html')
 
-        # Password hashing
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-        # User data to insert
         user_data = {
             "fname": fname,
             "lname": lname,
@@ -62,14 +62,11 @@ def register():
             "password": hashed_password
         }
 
-        # Save to MongoDB
-        users_collection.insert_one(user_data)
+        result = users_collection.insert_one(user_data)
+        print("Inserted user ID:", result.inserted_id)
 
-        # Store user in session
         session['username'] = username
         flash('Registration successful!')
-
-        # Redirect to prediction page
         return redirect(url_for('prediction'))
 
     return render_template('register.html')
@@ -110,11 +107,23 @@ def logout():
     flash("You have been logged out.", "info")
     return redirect(url_for('login'))
 
+#chatbot
+@app.route('/chatbot')
+def chatbot():
+    
+    return render_template('chatbot.html')
+
+#FAQ
+@app.route('/FAQ')
+def FAQ():
+
+    return render_template('FAQ.html')
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True)
 
-@app.route('/chatbot')
-def chatbot():
-    username= session['username']
-    return render_template('chatbot.html', username=username) 
+
+
+
+
+
