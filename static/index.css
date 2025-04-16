@@ -95,3 +95,36 @@ body {
           flex-direction: column;
         }
   
+        .chatbot-btn-link {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 1000;
+          text-decoration: none;
+        }
+        
+        .chatbot-btn {
+          width: 60px;
+          height: 60px;
+          background-color: #007bff;
+          border: none;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        }
+        
+        .chatbot-btn:hover {
+          transform: scale(1.1);
+        }
+        
+        .chatbot-logo {
+          width: 60%;
+          height: 60%;
+          object-fit: contain;
+        }
+        
+        

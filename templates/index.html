@@ -32,15 +32,18 @@
     </main>
 
     <footer>
+      <!-- Chatbot Button -->
+      <a href="{{ url_for('chatbot') }}" class="chatbot-btn-link">
+        <button class="chatbot-btn">
+          <img src="{{ url_for('static',filename='robo.jpg')}}" alt="Chatbot" class="chatbot-logo">
+        </button>
+      </a>
+      
+      <br>
       <div class="footer-content">
         <p style="font-size: 20px">&copy; MEDICO 2025. All Rights Reserved.</p>
       </div>
-      <div class="button">
-        <li>
-          <a href="{{ url_for('chatbot') }}" >chatbot</a>
-        </li>
-        
-      </div>
+
     </footer>
   </body>
 </html>

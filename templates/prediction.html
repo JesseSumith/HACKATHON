@@ -30,6 +30,7 @@
       <div class="predict">
         <label for="symptom 1">Choose symptom1:</label>
         <select id="symptom 1" name="symptom 1">
+          <option value="select">select</option>
           <option value="itching">itching</option>
          
           <option value=" skin_rash ">skin_rash</option>
@@ -187,6 +188,7 @@
         ><br />
         <label for="symptom 2">Choose symptom 2:</label>
         <select id="symptom 2" name="symptom 2">
+          <option value="select">select</option>
           <option value="itching">itching</option>
           
           <option value=" skin_rash ">skin_rash</option>
@@ -344,6 +346,8 @@
         ><br />
         <label for="symptom 3">Choose symptom 3:</label>
         <select id="symptom 3" name="symptom 3">
+          
+          <option value="select">select</option>
           <option value="itching">itching</option>
           
           <option value=" skin_rash ">skin_rash</option>
@@ -501,6 +505,7 @@
         ><br />
         <label for="symptom 4">Choose symptom 4:</label>
         <select id="symptom 4" name="symptom 4">
+          <option value="select">select</option>
           <option value="itching">itching</option>
           <option value=" itching ">itching</option>
           <option value=" skin_rash ">skin_rash</option>
@@ -658,6 +663,7 @@
         ><br />
         <label for="symptom 5">Choose symptom 5:</label>
         <select id="symptom 5" name="symptom 5">
+          <option value="select">select</option>
           <option value="itching">itching</option>
          
           <option value=" skin_rash ">skin_rash</option>
@@ -815,6 +821,7 @@
         </select>
         <input type="submit" value="Predict" />
       </div>
+
       <h1>Upload Previous Reports</h1>
       <form action="/upload" method="post" enctype="multipart/form-data">
         <label for="Blood test">Choose Blood test file:</label>
@@ -823,4 +830,69 @@
       </form>
     </div>
   </body>
+
+  <!-- Modal box -->
+<div id="predictionModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="predictionText">{{ prediction }}</p>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: red;
+  }
+</style>
+
+  <script>
+    function closeModal() {
+      document.getElementById("predictionModal").style.display = "none";
+    }
+  
+    window.onload = function () {
+      const prediction = "{{ prediction }}";
+      if (prediction && prediction !== "None") {
+        document.getElementById("predictionModal").style.display = "block";
+      }
+    };
+  </script>
+
+<form action="/predict" method="POST">
+  <!-- All your symptom dropdowns go here -->
+  <input type="submit" value="Predict" />
+</form>
+
+  
 </html>
