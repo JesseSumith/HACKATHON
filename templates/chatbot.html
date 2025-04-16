@@ -55,18 +55,126 @@
     <script>
       const chatbox = document.getElementById("chatbox");
 
-      const specialists = {
-        // ... same dictionary as before ...
+    
+        const specialists = {
         "fungal infection": "Dr. Meera Kapoor (Dermatologist)",
-        // [Truncated for brevity, you can keep all your original dictionary entries here]
+        allergy: "Dr. Ravi Patel (Allergist/Immunologist)",
+        gerd: "Dr. Kiran Rao (Gastroenterologist)",
+        "chronic cholestasis": "Dr. Preeti Sharma (Hepatologist)",
+        "drug reaction": "Dr. Anil Verma (Immunologist)",
+        "peptic ulcer diseae": "Dr. Nidhi Arora (Gastroenterologist)",
+        aids: "Dr. Aman Desai (Infectious Disease Specialist)",
+        diabetes: "Dr. Ravi Kumar (Endocrinologist)",
+        gastroenteritis: "Dr. Swati Nair (Gastroenterologist)",
+        "bronchial asthma": "Dr. Sneha Mehta (Pulmonologist)",
+        hypertension: "Dr. Vikram Sinha (Cardiologist)",
+        migraine: "Dr. Neelam Gupta (Neurologist)",
+        "cervical spondylosis": "Dr. Arjun Batra (Orthopedic Specialist)",
+        "paralysis (brain hemorrhage)": "Dr. Renu Joshi (Neurologist)",
+        jaundice: "Dr. Shweta Iyer (Hepatologist)",
+        malaria: "Dr. Harish Rao (General Physician)",
+        "chicken pox": "Dr. Shruti Nanda (Infectious Disease Specialist)",
+        dengue: "Dr. Rajeev Das (General Physician)",
+        typhoid: "Dr. Ananya Singh (General Physician)",
+        "hepatitis a": "Dr. Nitin Verma (Hepatologist)",
+        "hepatitis b": "Dr. Nitin Verma (Hepatologist)",
+        "hepatitis c": "Dr. Nitin Verma (Hepatologist)",
+        "hepatitis d": "Dr. Nitin Verma (Hepatologist)",
+        "hepatitis e": "Dr. Nitin Verma (Hepatologist)",
+        "alcoholic hepatitis": "Dr. Sonia Kapoor (Gastroenterologist)",
+        tuberculosis: "Dr. Akash Jha (Pulmonologist)",
+        "common cold": "Dr. Ramesh Iyer (General Physician)",
+        pneumonia: "Dr. Kavita Bansal (Pulmonologist)",
+        "dimorphic hemmorhoids(piles)":
+          "Dr. Deepak Thakur (Colorectal Surgeon)",
+        heartattack: "Dr. Manish Rawat (Cardiologist)",
+        varicoseveins: "Dr. Pooja Rana (Vascular Surgeon)",
+        hypothyroidism: "Dr. Rakesh Tiwari (Endocrinologist)",
+        hyperthyroidism: "Dr. Rakesh Tiwari (Endocrinologist)",
+        hypoglycemia: "Dr. Neha Raj (Endocrinologist)",
+        osteoarthristis: "Dr. Vikash Sen (Orthopedic Surgeon)",
+        arthritis: "Dr. Smita Deshmukh (Rheumatologist)",
+        "(vertigo) paroymsal  positional vertigo":
+          "Dr. Vinay Kulkarni (ENT Specialist)",
+        acne: "Dr. Payal Sharma (Dermatologist)",
+        "urinary tract infection": "Dr. Sameer Kapoor (Urologist)",
+        psoriasis: "Dr. Reema Das (Dermatologist)",
         impetigo: "Dr. Punit Bajaj (Dermatologist)",
       };
 
       const contacts = {
-        // ... same contact dictionary as before ...
+        "Dr. Meera Kapoor (Dermatologist)":
+          "📞 +91-9876543210 | 📧 meera.kapoor@clinic.com",
+        "Dr. Ravi Patel (Allergist/Immunologist)":
+          "📞 +91-9123456780 | 📧 ravi.patel@allergycare.com",
+        "Dr. Kiran Rao (Gastroenterologist)":
+          "📞 +91-9833344556 | 📧 kiran.rao@guthealth.com",
+        "Dr. Preeti Sharma (Hepatologist)":
+          "📞 +91-9876543213 | 📧 preeti.sharma@healthcare.com",
+        "Dr. Anil Verma (Immunologist)":
+          "📞 +91-9456784321 | 📧 anil.verma@immunocare.com",
+        "Dr. Nidhi Arora (Gastroenterologist)":
+          "📞 +91-9701234567 | 📧 nidhi.arora@gastroclinic.com",
+        "Dr. Aman Desai (Infectious Disease Specialist)":
+          "📞 +91-9327654789 | 📧 aman.desai@infectiouscare.com",
+        "Dr. Swati Nair (Gastroenterologist)":
+          "📞 +91-9908765432 | 📧 swati.nair@gastrocare.com",
+        "Dr. Sneha Mehta (Pulmonologist)":
+          "📞 +91-9801234567 | 📧 sneha.mehta@pulmocare.com",
+        "Dr. Vikram Sinha (Cardiologist)":
+          "📞 +91-9234567890 | 📧 vikram.sinha@heartclinic.com",
+        "Dr. Neelam Gupta (Neurologist)":
+          "📞 +91-9800987654 | 📧 neelam.gupta@neurocare.com",
+        "Dr. Arjun Batra (Orthopedic Specialist)":
+          "📞 +91-9206543210 | 📧 arjun.batra@orthocare.com",
+        "Dr. Renu Joshi (Neurologist)":
+          "📞 +91-9832233445 | 📧 renu.joshi@neurocare.com",
+        "Dr. Shweta Iyer (Hepatologist)":
+          "📞 +91-9711223344 | 📧 shweta.iyer@livercare.com",
+        "Dr. Harish Rao (General Physician)":
+          "📞 +91-9102123456 | 📧 harish.rao@generalclinic.com",
+        "Dr. Shruti Nanda (Infectious Disease Specialist)":
+          "📞 +91-9345678901 | 📧 shruti.nanda@infectiouscare.com",
+        "Dr. Rajeev Das (General Physician)":
+          "📞 +91-9090909090 | 📧 rajeev.das@cityhospital.com",
+        "Dr. Ananya Singh (General Physician)":
+          "📞 +91-9765432100 | 📧 ananya.singh@healthcare.com",
+        "Dr. Nitin Verma (Hepatologist)":
+          "📞 +91-9001234567 | 📧 nitin.verma@liverclinic.com",
+        "Dr. Sonia Kapoor (Gastroenterologist)":
+          "📞 +91-9805432100 | 📧 sonia.kapoor@gastrocare.com",
+        "Dr. Akash Jha (Pulmonologist)":
+          "📞 +91-9212345678 | 📧 akash.jha@pulmonology.com",
+        "Dr. Ramesh Iyer (General Physician)":
+          "📞 +91-9123456789 | 📧 ramesh.iyer@cityclinic.com",
+        "Dr. Kavita Bansal (Pulmonologist)":
+          "📞 +91-9387654321 | 📧 kavita.bansal@pulmocare.com",
+        "Dr. Deepak Thakur (Colorectal Surgeon)":
+          "📞 +91-9456123456 | 📧 deepak.thakur@colorectalcare.com",
+        "Dr. Manish Rawat (Cardiologist)":
+          "📞 +91-9301234567 | 📧 manish.rawat@heartcare.com",
+        "Dr. Pooja Rana (Vascular Surgeon)":
+          "📞 +91-9234567890 | 📧 pooja.rana@vascularcare.com",
+        "Dr. Rakesh Tiwari (Endocrinologist)":
+          "📞 +91-9123456789 | 📧 rakesh.tiwari@endocrineclinic.com",
+        "Dr. Neha Raj (Endocrinologist)":
+          "📞 +91-9800123456 | 📧 neha.raj@diabetesclinic.com",
+        "Dr. Vikash Sen (Orthopedic Surgeon)":
+          "📞 +91-9223344556 | 📧 vikash.sen@orthocare.com",
+        "Dr. Smita Deshmukh (Rheumatologist)":
+          "📞 +91-9394033456 | 📧 smita.deshmukh@rheumacare.com",
+        "Dr. Vinay Kulkarni (ENT Specialist)":
+          "📞 +91-9209876543 | 📧 vinay.kulkarni@entcare.com",
+        "Dr. Payal Sharma (Dermatologist)":
+          "📞 +91-9012345678 | 📧 payal.sharma@skincareclinic.com",
+        "Dr. Sameer Kapoor (Urologist)":
+          "📞 +91-9234567890 | 📧 sameer.kapoor@urologycare.com",
+        "Dr. Reema Das (Dermatologist)":
+          "📞 +91-9876543212 | 📧 reema.das@dermacare.com",
         "Dr. Punit Bajaj (Dermatologist)":
           "📞 +91-9087654321 | 📧 punit.bajaj@dermatologycare.com",
       };
+      
 
       let lastDoctor = null;
 

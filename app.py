@@ -113,3 +113,8 @@ def logout():
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/chatbot')
+def chatbot():
+    username= session['username']
+    return render_template('chatbot.html', username=username) 
