@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doctor Connection Chatbot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        padding: 20px;
+      }
+      #chatbox {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .bot,
+      .user {
+        margin: 10px 0;
+      }
+      .bot {
+        color: #333;
+      }
+      .user {
+        text-align: right;
+        color: #007bff;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chatbox">
+      <div class="bot">
+        👋 Hello! I'm your health assistant. Please enter the disease name to
+        connect with a doctor.
+      </div>
+    </div>
+
+    <input
+      type="text"
+      id="userInput"
+      placeholder="e.g. Diabetes"
+      onkeypress="handleKey(event)"
+    />
+    <script>
+      const chatbox = document.getElementById("chatbox");
+
+      const specialists = {
+        // ... same dictionary as before ...
+        "fungal infection": "Dr. Meera Kapoor (Dermatologist)",
+        // [Truncated for brevity, you can keep all your original dictionary entries here]
+        impetigo: "Dr. Punit Bajaj (Dermatologist)",
+      };
+
+      const contacts = {
+        // ... same contact dictionary as before ...
+        "Dr. Punit Bajaj (Dermatologist)":
+          "📞 +91-9087654321 | 📧 punit.bajaj@dermatologycare.com",
+      };
+
+      let lastDoctor = null;
+
+      function handleKey(e) {
+        if (e.key === "Enter") {
+          const input = document.getElementById("userInput");
+          const message = input.value.trim().toLowerCase();
+          if (!message) return;
+
+          appendMessage(message, "user");
+
+          if (message === "yes" && lastDoctor) {
+            if (contacts[lastDoctor]) {
+              appendMessage(
+                `📇 Here are the contact details of <strong>${lastDoctor}</strong>:<br>${contacts[lastDoctor]}`,
+                "bot"
+              );
+            } else {
+              appendMessage(
+                `📇 Sorry, we don't have contact details for <strong>${lastDoctor}</strong> yet.`,
+                "bot"
+              );
+            }
+            lastDoctor = null;
+          } else if (specialists[message]) {
+            const doctor = specialists[message];
+            lastDoctor = doctor;
+            appendMessage(
+              `🔍 Based on your input, we recommend <strong>${doctor}</strong>.<br>Would you like to book an appointment? (yes/no)`,
+              "bot"
+            );
+          } else {
+            appendMessage(
+              "❌ Sorry, I couldn't find a specialist for that disease. Please check the spelling or try another.",
+              "bot"
+            );
+            lastDoctor = null;
+          }
+
+          input.value = "";
+        }
+      }
+
+      function appendMessage(message, sender) {
+        const div = document.createElement("div");
+        div.className = sender;
+        div.innerHTML = message;
+        chatbox.appendChild(div);
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }
+    </script>
+  </body>
+</html>

@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Register | MEDICO</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}" />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="navdiv">
-          <div class="logo">
-            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="logo" />
-            Predict Prevent Protect Thrive<br>MEDICO
+    <div class="form-wrapper">
+      <h2>Create Account</h2>
+      <form id="registerForm" method="POST">
+        <div class="input-field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" required />
+        </div>
+        <div class="input-field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" required />
+        </div>
+        <div class="input-field">
+          <label for="lname">Username</label>
+          <input type="text" id="lname" name="lname" required />
+        </div>
+        <div class="input-field">
+          <label for="contact">Phone Number</label>
+          <input type="tel" id="contact" name="contact" maxlength="10" required />
+        </div>
+        <div class="input-field">
+          <label for="birthdate">Date of Birth</label>
+          <input type="date" id="birthdate" name="birthdate" required />
+        </div>
+        <div class="input-field">
+          <label>Gender</label>
+          <div class="gender-section">
+            <label><input type="radio" name="gender" value="M" required /> Male</label>
+            <label><input type="radio" name="gender" value="F" /> Female</label>
+            <label><input type="radio" name="gender" value="O" /> Other</label>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <section>
-      <main>
-        <h1 style="text-align: center;">REGISTER HERE</h1>
-        <div class="login-box">
-          <form method="POST" action="/register">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
-
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-
-            <button type="submit" style="font-size: 30px;">Register</button>
-          </form>
-
-          <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+        <div class="input-field">
+          <label for="userAge">Age</label>
+          <input type="number" id="userAge" name="userAge" required />
         </div>
-      </main>
-    </section>
-
-    <footer>
-      <div class="footer-content">
-        <p style="font-size: 20px"><br><br>&copy; MEDICO 2025. All Rights Reserved.</p>
+        <div class="input-field">
+          <label for="userEmail">Email</label>
+          <input type="email" id="userEmail" name="userEmail" required />
+        </div>
+        <div class="input-field">
+          <label for="userPass">Password</label>
+          <input type="password" id="userPass" name="userPass" required />
+        </div>
+        <div class="input-field">
+          <label for="retypePass">Confirm Password</label>
+          <input type="password" id="retypePass" name="retypePass" required />
+        </div>
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+      <div class="footer-link">
+        <a href="#">Already a user? Log in</a>
       </div>
-    </footer>
+    </div>
+
+    <script>
+      document.getElementById("registerForm").addEventListener("submit", function (e) {
+        const pass1 = document.getElementById("userPass").value;
+        const pass2 = document.getElementById("retypePass").value;
+
+        if (pass1 !== pass2) {
+          e.preventDefault();
+          alert("Passwords must match.");
+        }
+      });
+    </script>
   </body>
 </html>

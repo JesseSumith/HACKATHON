@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e6eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../static/image.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .form-wrapper {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  
+  .input-field {
+    margin-bottom: 14px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .gender-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #0066cc;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #004f99;
+  }
+  
+  .footer-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .footer-link a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-link a:hover {
+    text-decoration: underline;
+  }
+  
